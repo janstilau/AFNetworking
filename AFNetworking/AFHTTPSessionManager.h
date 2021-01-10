@@ -225,6 +225,7 @@ NS_ASSUME_NONNULL_BEGIN
                                headers:(nullable NSDictionary <NSString *, NSString *> *)headers
                                success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
+- (nullable NSURLSessionDataTask *)PUT:(NSString *)URLString;
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a `PATCH` request.

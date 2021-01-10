@@ -230,6 +230,11 @@
     return dataTask;
 }
 
+- (nullable NSURLSessionDataTask *)PUT:(NSString *)URLString
+{
+    return [self PUT:URLString parameters:nil headers:nil success:nil failure:nil];
+}
+
 - (NSURLSessionDataTask *)PATCH:(NSString *)URLString
                      parameters:(nullable id)parameters
                         headers:(nullable NSDictionary<NSString *,NSString *> *)headers
