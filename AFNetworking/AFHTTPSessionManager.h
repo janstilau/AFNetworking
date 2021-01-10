@@ -187,7 +187,7 @@ NS_ASSUME_NONNULL_BEGIN
                                progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
                                 success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
                                 failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
-
+- (NSURLSessionDataTask *)POST:(NSString *)URLString;
 /**
  Creates and runs an `NSURLSessionDataTask` with a multipart `POST` request.
  

@@ -213,6 +213,10 @@
     return task;
 }
 
+- (NSURLSessionDataTask *)POST:(NSString *)URLString {
+    return [self POST:URLString parameters:nil headers:nil progress:nil success:nil failure:nil];
+}
+
 - (NSURLSessionDataTask *)PUT:(NSString *)URLString
                    parameters:(nullable id)parameters
                       headers:(nullable NSDictionary<NSString *,NSString *> *)headers
