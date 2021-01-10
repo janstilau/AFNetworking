@@ -139,6 +139,10 @@
     return dataTask;
 }
 
+- (nullable NSURLSessionDataTask *)GET:(NSString *)URLString {
+    return [self GET:URLString parameters:nil headers:nil progress:nil success:nil failure:nil];
+}
+
 - (NSURLSessionDataTask *)HEAD:(NSString *)URLString
                     parameters:(nullable id)parameters
                        headers:(nullable NSDictionary<NSString *,NSString *> *)headers
