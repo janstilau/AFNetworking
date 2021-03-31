@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06A412142614C8C1001C2011 /* MyTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A412132614C8C1001C2011 /* MyTestCase.m */; };
 		1BF9F9601C87832B00F1F35A /* AFImageResponseSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9F95F1C87832B00F1F35A /* AFImageResponseSerializerTests.m */; };
 		1BF9F9611C87843200F1F35A /* AFImageResponseSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9F95F1C87832B00F1F35A /* AFImageResponseSerializerTests.m */; };
 		1BF9F9621C87843300F1F35A /* AFImageResponseSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9F95F1C87832B00F1F35A /* AFImageResponseSerializerTests.m */; };
@@ -233,6 +234,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06A412132614C8C1001C2011 /* MyTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTestCase.m; sourceTree = "<group>"; };
 		1BF9F95F1C87832B00F1F35A /* AFImageResponseSerializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageResponseSerializerTests.m; sourceTree = "<group>"; };
 		1F083A4920364648004D80C7 /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFCompatibilityMacros.h; sourceTree = "<group>"; };
 		2960BAC21C1B2F1A00BA02F0 /* AFUIButtonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFUIButtonTests.m; sourceTree = "<group>"; };
@@ -452,12 +454,12 @@
 		298D7CD11BC2CABE00FD3B3E /* AFNetworking Tests */ = {
 			isa = PBXGroup;
 			children = (
+				298D7C851BC2C88F00FD3B3E /* AFJSONSerializationTests.m */,
 				29D3413E1C20D46400A7D266 /* AFCompoundResponseSerializerTests.m */,
 				298D7C811BC2C88F00FD3B3E /* AFHTTPRequestSerializationTests.m */,
 				298D7C821BC2C88F00FD3B3E /* AFHTTPResponseSerializationTests.m */,
 				298D7C831BC2C88F00FD3B3E /* AFHTTPSessionManagerTests.m */,
 				1BF9F95F1C87832B00F1F35A /* AFImageResponseSerializerTests.m */,
-				298D7C851BC2C88F00FD3B3E /* AFJSONSerializationTests.m */,
 				298D7C871BC2C88F00FD3B3E /* AFNetworkReachabilityManagerTests.m */,
 				E91164641DA6A7AE00DFFF56 /* AFPropertyListRequestSerializerTests.m */,
 				298D7C881BC2C88F00FD3B3E /* AFPropertyListResponseSerializerTests.m */,
@@ -465,6 +467,7 @@
 				298D7C8F1BC2C88F00FD3B3E /* AFURLSessionManagerTests.m */,
 				2D4563931DB11DDB00AE4812 /* AFXMLDocumentResponseSerializerTests.m */,
 				2D45638F1DB1179D00AE4812 /* AFXMLParserResponseSerializerTests.m */,
+				06A412132614C8C1001C2011 /* MyTestCase.m */,
 			);
 			name = "AFNetworking Tests";
 			sourceTree = "<group>";
@@ -1027,6 +1030,7 @@
 				298D7CB11BC2CA6E00FD3B3E /* AFHTTPRequestSerializationTests.m in Sources */,
 				297824AE1BC2DBD80041C395 /* AFUIActivityIndicatorViewTests.m in Sources */,
 				297824AD1BC2DBA40041C395 /* AFNetworkActivityManagerTests.m in Sources */,
+				06A412142614C8C1001C2011 /* MyTestCase.m in Sources */,
 				1BF9F9601C87832B00F1F35A /* AFImageResponseSerializerTests.m in Sources */,
 				298D7CDD1BC2CAF700FD3B3E /* AFSecurityPolicyTests.m in Sources */,
 				298D7CD31BC2CAE800FD3B3E /* AFHTTPResponseSerializationTests.m in Sources */,

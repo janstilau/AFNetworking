@@ -1,28 +1,9 @@
-// AFJSONSerializationTests.m
-// Copyright (c) 2011–2016 Alamofire Software Foundation ( http://alamofire.org/ )
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-
 #import "AFTestCase.h"
 
 #import "AFURLRequestSerialization.h"
 #import "AFURLResponseSerialization.h"
+
+// 分析的第一个类.
 
 static NSData * AFJSONTestData() {
     return [NSJSONSerialization dataWithJSONObject:@{@"foo": @"bar"} options:(NSJSONWritingOptions)0 error:nil];
@@ -30,18 +11,38 @@ static NSData * AFJSONTestData() {
 
 #pragma mark -
 
+// AFNetworking iOS Tests
+// 整个测试程序, 其实会变为一个 App. 里面, 测试的各种资源文件都会被移植到这个 App 内.
+// 所以, Tests, 就是一个单独的程序, 来进行各个类的测试工作.
+// 因为是单元测试, 一般来说, 一个测试用例也就测试一个类的方法, 彼此不会有太多的耦合的关系.
+
+// 一个测试用例, 就是一个对象, 在里面可以存储信息. 在测试方法里面, 可以根据这些存储的信息. 进行方法的调用.
+// 一般来说, 就是存储了被测试的类的实例, 调用这个实例的方法, 查看结果.
 @interface AFJSONRequestSerializationTests : AFTestCase
+
 @property (nonatomic, strong) AFJSONRequestSerializer *requestSerializer;
+
 @end
 
 @implementation AFJSONRequestSerializationTests
 
 - (void)setUp {
+    // Put setup code here. This method is called before the invocation of each test method in the class.
+    // 在这里, 进行了被测试对象的初始化的工作.
     self.requestSerializer = [[AFJSONRequestSerializer alloc] init];
+}
+
+- (void)tearDown {
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    // 在这里, 进行资源的回收, 或者全局状态重置的工作.
 }
 
 #pragma mark -
 
+// 在方法的内部, 组织数据, 进行对象相关方法的调用, 然后验证对应的结果是不是符合 Assert 的声明.
+// 如果不符合, 那么就是失败了. Xcode 就会进行标识.
+// 然后最终, 就是 TestFailed.
+// 如果都通过了测试, 就是 TestSuccess.
 - (void)testThatJSONRequestSerializationHandlesParametersDictionary {
     NSDictionary *parameters = @{@"key":@"value"};
     NSError *error = nil;

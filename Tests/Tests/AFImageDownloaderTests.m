@@ -54,6 +54,7 @@
 
 #pragma mark - Image Download
 
+// 这里, 仅仅是测试不为空了.
 - (void)testThatImageDownloaderSingletonCanBeInitialized {
     AFImageDownloader *downloader = [AFImageDownloader defaultInstance];
     XCTAssertNotNil(downloader, @"Downloader should not be nil");
@@ -75,6 +76,8 @@
      *  but NSMutableURLRequest can have its URL set to nil 
      **/
     NSURLRequest *invalidRequest = [mutableURLRequest copy];
+    
+    // 这里, 建立了一个期望.
     XCTestExpectation *expectation = [self expectationWithDescription:@"Request should fail"];
     AFImageDownloadReceipt *downloadReceipt = [self.downloader
                                                downloadImageForURLRequest:invalidRequest
@@ -83,6 +86,7 @@
                                                    XCTAssertNotNil(error);
                                                    XCTAssertTrue([error.domain isEqualToString:NSURLErrorDomain]);
                                                    XCTAssertTrue(error.code == NSURLErrorBadURL);
+        // 在这里, 前面的都满足了之后, 将期望设置为 fullfil.
                                                    [expectation fulfill];
                                                }];
     [self waitForExpectationsWithCommonTimeout];
