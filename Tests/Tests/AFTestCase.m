@@ -1,5 +1,6 @@
 #import "AFTestCase.h"
 
+// 这个方法, 就是从指定的路径, 去加载证书数据.
 SecTrustRef AFUTTrustChainForCertsInDirectory(NSString *directoryPath) {
     NSArray *certFileNames = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directoryPath error:nil];
     NSMutableArray *certs  = [NSMutableArray arrayWithCapacity:[certFileNames count]];
@@ -21,6 +22,7 @@ SecTrustRef AFUTTrustChainForCertsInDirectory(NSString *directoryPath) {
 
 - (void)setUp {
     [super setUp];
+    // 默认, Expection 的时间是 20 秒.
     self.networkTimeout = 20.0;
 }
 

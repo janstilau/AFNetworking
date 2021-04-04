@@ -44,12 +44,16 @@
                                                  completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         blockResponseObject = responseObject;
         blockError = error;
+        for(int i = 0; i < 10000; i++) {
+            NSLog(@"%@", @(i));
+        }
         [expectation fulfill];
     }];
 
     [task resume];
 
     [self waitForExpectationsWithTimeout:10.0 handler:nil];
+    NSLog(@"After wait");
 
     XCTAssertTrue(task.state == NSURLSessionTaskStateCompleted);
     XCTAssertNil(blockError);

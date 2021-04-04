@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
   s.watchos.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.alamofire.AFNetworking-watchOS' }
   s.tvos.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.alamofire.AFNetworking' }
 
+# 这里, AFN 的 module 仅仅包含了 AFNetworking.h
   s.source_files = 'AFNetworking/AFNetworking.h'
 
   s.subspec 'Serialization' do |ss|

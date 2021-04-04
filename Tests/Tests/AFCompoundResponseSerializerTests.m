@@ -45,6 +45,7 @@
 
     AFImageResponseSerializer *imageSerializer = [AFImageResponseSerializer serializer];
     AFJSONResponseSerializer *jsonSerializer = [AFJSONResponseSerializer serializer];
+    // 这里应该是后面增加的一个序列化器, 之前没有见过.
     AFCompoundResponseSerializer *compoundSerializer = [AFCompoundResponseSerializer compoundSerializerWithResponseSerializers:@[imageSerializer, jsonSerializer]];
 
     NSData *data = [NSJSONSerialization dataWithJSONObject:@{@"key":@"value"} options:(NSJSONWritingOptions)0 error:nil];
@@ -55,7 +56,7 @@
 
     NSError *error = nil;
     id responseObject = [compoundSerializer responseObjectForResponse:response data:data error:&error];
-
+    NSLog(@"%@", responseObject);
     XCTAssertTrue([responseObject isKindOfClass:[NSDictionary class]]);
     XCTAssertNil(error);
 }

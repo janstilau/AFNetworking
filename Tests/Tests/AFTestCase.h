@@ -2,6 +2,7 @@
 
 SecTrustRef AFUTTrustChainForCertsInDirectory(NSString *directoryPath);
 
+// 在 XCTestCase 下, 封装一层, 用作所有的测试用例的父类.
 @interface AFTestCase : XCTestCase
 
 @property (nonatomic, strong, readonly) NSURL *baseURL;
