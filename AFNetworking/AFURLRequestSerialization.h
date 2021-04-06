@@ -200,22 +200,7 @@ forHTTPHeaderField:(NSString *)field;
  */
 - (void)setQueryStringSerializationWithBlock:(nullable NSString * _Nullable (^)(NSURLRequest *request, id parameters, NSError * __autoreleasing *error))block;
 
-///-------------------------------
-/// @name Creating Request Objects
-///-------------------------------
-
-/**
- Creates an `NSMutableURLRequest` object with the specified HTTP method and URL string.
-
- If the HTTP method is `GET`, `HEAD`, or `DELETE`, the parameters will be used to construct a url-encoded query string that is appended to the request's URL. Otherwise, the parameters will be encoded according to the value of the `parameterEncoding` property, and set as the request body.
-
- @param method The HTTP method for the request, such as `GET`, `POST`, `PUT`, or `DELETE`. This parameter must not be `nil`.
- @param URLString The URL string used to create the request URL.
- @param parameters The parameters to be either set as a query string for `GET` requests, or the request HTTP body.
- @param error The error that occurred while constructing the request.
-
- @return An `NSMutableURLRequest` object.
- */
+// 核心方法, 用后面的参数, 制造出一个 NSURLRequest 对象出来.
 - (nullable NSMutableURLRequest *)requestWithMethod:(NSString *)method
                                           URLString:(NSString *)URLString
                                          parameters:(nullable id)parameters
